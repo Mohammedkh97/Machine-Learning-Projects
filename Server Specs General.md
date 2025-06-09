@@ -55,6 +55,17 @@
 
 ---
 
+## 🖥️ If we're using Groq's API for inference only:
+
+You **don’t need a high-end GPU** because the model runs on **Groq's ultra-fast server**.
+
+👉 In that case, your machine needs:
+
+* Fast CPU (for preprocessing)
+* 16–32GB RAM
+* No dedicated GPU required unless you're running Qwen2-VL-2B locally
+
+---
 
 ## 🧠 Example Ideal Setup (Laptop)
 
@@ -69,75 +80,54 @@ We can always offload model inference to Groq and use your machine for everythin
 
 ---
 
-Great! Based on everything you've shared — your use of **Qwen2-VL-2B-OCR** for local inference and **Groq API** for cloud-side detection — and the **official hardware requirement screenshot from Hugging Face** (GPU with **at least 16 GB of VRAM**), here is the **final summary**:
+## ✅ **Recommended Server Specs (Local OCR + Pre/Postprocessing)**
+
+For our use case — running the **Qwen2-VL-2B-OCR model locally** (vision-language transformer with 2 billion parameters) and using **Groq API** for post-processing — here’s a list of **server-grade recommendations** optimized for **OCR + PDF handling + model inference**.
 
 ---
 
-## ✅ Final Hardware Requirements Summary
 
-### 💻 For **PC/Laptop (Local Development or Light Inference)**
 
-| Component   | Minimum Recommended                             | Optimal Recommended for Long-Term                               |
-| ----------- | ----------------------------------------------- | --------------------------------------------------------------- |
-| **GPU**     | NVIDIA RTX 3060 (12GB) or RTX A2000 (12GB)      | ✅ **NVIDIA RTX 3090 / RTX 4080 / A5000 / A6000 (>=16 GB VRAM)** |
-| **CPU**     | Intel Core i7 (11th gen or later) / AMD Ryzen 7 | Intel Core i9 / AMD Ryzen 9 / Threadripper                      |
-| **RAM**     | 32 GB DDR4                                      | ✅ **64 GB DDR4/DDR5**                                           |
-| **Storage** | 1 TB NVMe SSD                                   | ✅ 1–2 TB NVMe Gen4 SSD                                          |
-| **OS**      | Ubuntu 22.04 / Windows 11 Pro                   | Ubuntu 22.04 (for best Python/AI tools)                         |
-| **Other**   | CUDA/cuDNN-compatible GPU, Docker               | Conda, venv, VS Code, PyTorch                                   |
+### 🚀 **Ideal Specs for Smooth Workflow**
 
-### ✅ Best Laptops for This:
-
-* **MSI Raider / Titan** with RTX 4080/4090
-* **Dell Precision 7000 series with RTX A4000 or A5000**
-* **Lenovo Legion Pro / ThinkPad P1** with RTX 3080 Ti or better
+| Component        | Recommendation                                                                          |
+| ---------------- | --------------------------------------------------------------------------------------- |
+| **CPU**          | AMD EPYC 7003 / Intel Xeon Silver or Gold (8+ cores, high base clock)                   |
+| **RAM**          | **64 GB DDR4/DDR5 ECC RAM** (OCR + PDFs + tokenized data = memory-intensive)            |
+| **GPU**          | ✅ **NVIDIA RTX 4090 / A6000 (24–48 GB VRAM)** <br> 💡 Or: **2× RTX 4080 (24 GB total)** |
+| **Storage**      | 2 TB NVMe SSD (PCIe Gen4) + optional 4TB HDD for archiving                              |
+| **Networking**   | Gigabit Ethernet / 10GbE (if heavy API integration or file transfer needed)             |
+| **Power Supply** | 850W+ (especially with high-end GPUs like RTX 4090)                                     |
+| **Cooling**      | Liquid or high airflow tower cooler – model inference can run hot                       |
+| **OS**           | Ubuntu 22.04 LTS (preferred) or Windows Server 2022                                     |
 
 ---
 
-## 🖥️ For **Server (Production or Heavy OCR Inference)**
+## 🧠 **Why These Choices?**
 
-### 🎯 Recommended Specs (Cloud/Bare Metal)
-
-| Component      | Specification                                                     |
-| -------------- | ----------------------------------------------------------------- |
-| **GPU**        | ✅ **NVIDIA A100 (40 GB)**, **A40 (48 GB)**, or **L40** (24–48 GB) |
-| **CPU**        | AMD EPYC or Intel Xeon Gold (16–32 Cores)                         |
-| **RAM**        | ✅ **128 GB ECC DDR4/DDR5**                                        |
-| **Storage**    | 2 TB NVMe Gen4 SSD                                                |
-| **Bandwidth**  | At least 1 Gbps uplink (10 Gbps ideal for high throughput OCR)    |
-| **OS**         | Ubuntu 22.04 or Rocky Linux                                       |
-| **GPU Driver** | Latest CUDA + cuDNN stack                                         |
-
-### ✅ Best Providers:
-
-| Provider             | Recommendation                                                       |
-| -------------------- | -------------------------------------------------------------------- |
-| **OVHcloud**         | ✅ Best value for long-term GPU hosting (Bare Metal GPU / Public GPU) |
-| **Lambda Labs**      | Deep learning-focused servers (L40s, A100s)                          |
-| **Paperspace**       | Flexible hourly usage with GPU (ideal for testing)                   |
-| **RunPod / Vast.ai** | Budget GPU servers with pay-per-use model                            |
+* **GPU Memory** is crucial: OCR models with large visual transformers (ViT + LLM) consume lots of VRAM.
+* **CPU & RAM** help for high-throughput PDF loading, image conversion, and tokenization.
+* **SSD** speeds up dataset and model loading (especially when batching PDFs).
 
 ---
 
-## 📌 Final Notes:
+## 🖥️ **Recommended Pre-Built Workstation Servers**
 
-### When to Choose Local PC/Laptop:
+### 🥇 **Lambda Tensorbook / Vector Workstation**
 
-* You're experimenting, building, and testing OCR workflows.
-* You want offline or portable access.
-* You're not running large batches continuously.
+* Used widely by AI professionals.
+* GPU: RTX 4090 / A6000 options.
+* Pre-installed with CUDA, PyTorch, and Hugging Face stack.
 
-### When to Choose Cloud Server (Benefits):
+### 🥈 **Puget Systems AI Workstation**
 
-* You need **scalable**, **high-throughput** inference (e.g., batch PDFs).
-* You want **24/7 access**, production-grade hosting.
-* You plan to host APIs, or run model serving endpoints.
+* Highly customizable.
+* GPU options up to RTX 4090 or multi-GPU.
+* Designed for AI + computer vision workloads.
 
----
+### 🥉 **Dell Precision 7865 Tower**
 
-##  Suggested:
+* AMD Threadripper PRO + RTX A6000.
+* Enterprise reliability + ECC RAM.
+* Ideal for mixed workloads (AI + documentation + secure deployment).
 
-If budget allows, use:
-
-* **Local**: RTX 4080 PC + 64 GB RAM for dev/testing
-* **Server**: OVHcloud GPU Bare Metal w/ NVIDIA A40 or A100 for deployment

@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/developer/Dev/Machine-Learning-Projects/Employees_Data_Detection'
+make: Leaving directory '/home/developer/Dev/Machine-Learning-Projects/Employees_Data_Detection'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+

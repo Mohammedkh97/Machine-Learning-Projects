@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun 19 13:37:51 2025
+# Make data base, printed on Fri Jul 11 10:17:49 2025
 
 # Variables
 
@@ -47,7 +49,7 @@ XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = /home/developer/.config/Code/CachedData/dfaf44141ea9deb3b4096f7cd6d24e00c147a4b1
+VSCODE_CODE_CACHE_PATH = /home/developer/.config/Code/CachedData/2901c5ac6db8a986a5666c3af51ff804d05af0d4
 # environment
 LANG = C
 # environment
@@ -61,7 +63,7 @@ MEMORY_PRESSURE_WATCH = /sys/fs/cgroup/user.slice/user-1000.slice/user@1000.serv
 # makefile
 MAKEFLAGS = pqrR
 # environment
-DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=60e0f0e4ce886b70113220196853d8ae
+DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=03327b6ece603d410131a6ef6870ab62
 # makefile
 CURDIR := /home/developer/Dev/Machine-Learning-Projects/Employees_Data_Detection
 # environment
@@ -87,19 +89,19 @@ MAKEFILE_LIST :=
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 16913
+VSCODE_PID = 5290
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/nmmc:@/tmp/.ICE-unix/2709,unix/nmmc:/tmp/.ICE-unix/2709
+SESSION_MANAGER = local/nmmc:@/tmp/.ICE-unix/2922,unix/nmmc:/tmp/.ICE-unix/2922
 # automatic
 *F = $(notdir $*)
 # environment
 CHROME_DESKTOP = code.desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=60e0f0e4ce886b70113220196853d8ae
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=03327b6ece603d410131a6ef6870ab62
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
@@ -127,7 +129,7 @@ MAKEFILES :=
 # automatic
 ^F = $(notdir $^)
 # environment
-INVOCATION_ID = 790c4c0287354e6e8b544e01c26b53ac
+INVOCATION_ID = 5335175f3f584240943f7486b5f7443f
 # environment
 USERNAME = developer
 # environment
@@ -153,7 +155,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 2709
+SYSTEMD_EXEC_PID = 2922
 # environment
 DISPLAY = :1
 # environment
@@ -163,13 +165,13 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 2378
+MANAGERPID = 2552
 # environment
 DBUS_STARTER_BUS_TYPE = session
 # environment
 DEBUGINFOD_URLS = https://debuginfod.ubuntu.com 
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 16913
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5290
 # environment
 _ = /usr/share/code/code
 # environment
@@ -177,7 +179,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-JOURNAL_STREAM = 9:12628
+JOURNAL_STREAM = 9:38232
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -265,14 +267,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 33 / storage = 468 B / avg = 14 B
-# current buf: size = 8162 B / used = 468 B / count = 33 / avg = 14 B
+# strcache buffers: 1 (0) / strings = 33 / storage = 540 B / avg = 16 B
+# current buf: size = 8162 B / used = 540 B / count = 33 / avg = 16 B
 
 # strcache performance: lookups = 36 / hit rate = 8%
 # hash-table stats:
 # Load=33/8192=0%, Rehash=0, Collisions=0/36=0%
-# Finished Make data base on Thu Jun 19 13:37:51 2025
+# Finished Make data base on Fri Jul 11 10:17:49 2025
 
  
-make: *** No rule to make target 'all'.  Stop.
-

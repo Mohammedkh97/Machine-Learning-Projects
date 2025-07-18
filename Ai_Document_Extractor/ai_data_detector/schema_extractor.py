@@ -3,6 +3,7 @@ from config import get_api_key
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from schemas import DocumentSchema
+
 # from config import llm
 from load_model import inference
 import json
@@ -91,18 +92,15 @@ def extract_clean_output(q):
     return json.dumps(result, indent=4)
 
 
-if __name__ == "__main__":
-
-    # url = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
-    # url = "https://americanamc-ammc-develop-21053955.dev.odoo.com/web/content/11760"
-
-    # url = "http://149.102.141.44:8066/web/content/80106",
+def main():
     url = "https://americanamc-ammc-develop-21331446.dev.odoo.com/web/content/13542"
-    # url = []
     employee_id = "12345"
 
     text = inference(url, employee_id)
-    # print(text)
     q = extract_document_schema(str(text))
     print(q)
-    # print(extract_clean_output(q))
+    # Optionally: print(extract_clean_output(q))
+
+
+if __name__ == "__main__":
+    main()

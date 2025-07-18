@@ -2,26 +2,6 @@
 
 A production-grade Python pipeline to extract structured data from employee-related PDF documents using OCR and LLMs. The system takes a **document URL**, performs **OCR**, and extracts **schema-aligned JSON** using **LangChain** + **LLMs** or **prompt-engineered extraction**.
 
- > ✅ Already integrated with Odoo ERP for real-world employee document automation.
----
-
-## 🚀 Project Overview
-
-This project automates information extraction from various employee-related documents (e.g., passports, visas, employment contracts, change status, residence permits, healthcare certifications). It processes document URLs and returns structured data in JSON format using two robust pipelines:
-
-* ✅ **OCR + LLM (via LangChain) with Pydantic schema validation**
-* ✅ **OCR + Prompt-based schema extraction using LLM**
-
----
-
-Great! Here’s the updated **README** with a new section highlighting the **Odoo integration**, plus a mention in the overview and future improvements.
-
----
-
-# 🧠 AI Document Schema Extractor
-
-A production-grade Python pipeline to extract structured data from employee-related PDF documents using OCR and LLMs. The system takes a **document URL**, performs **OCR**, and extracts **schema-aligned JSON** using **LangChain** + **LLMs** or **prompt-engineered extraction**.
-
 ✅ **Already integrated with [Odoo ERP](https://www.odoo.com/)** for real-world employee document automation.
 
 ---
@@ -52,7 +32,8 @@ This project is **fully integrated with Odoo** and works directly with document 
 
 ```mermaid
 flowchart TD
-    A[Uploaded Document URL] --> B[Download PDF]
+    Z[API Endpoint Triggered with Document URL] --> A[Uploaded Document URL]
+    A --> B[Download PDF]
     B --> C[Convert PDF to Image]
     C --> D[OCR using Qwen2-VL-2B-OCR]
     D --> E[Extracted Text]
@@ -63,7 +44,7 @@ flowchart TD
     F1 --> G[Validated JSON Output]
     F2 --> G[Validated JSON Output]
     G --> H[Return JSON]
-    H --> I[Stored Return JSON into Odoo Database]
+    H --> I[Stored Values in Odoo Database]
 ```
 
 ---
@@ -159,35 +140,83 @@ A URL pointing to a PDF document uploaded in the backend (e.g., Odoo, ERP, HR sy
 
 ---
 
-## 🛠️ Usage
 
-### Install dependencies
+## 🚀 Installation & Usage
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Mohammedkh97/Machine-Learning-Projects.git
+cd Machine-Learning-Projects/Ai_Document_Extractor
+```
+
+### 2. Create and Activate a Virtual Environment (Optional but Recommended)
+
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+```
+### 3. 🧩 Requirements
+
+Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Run the extractor
+### 4. Install the Package
+
+Install the package locally in *editable* mode:
 
 ```bash
-python ai_data_detector/schema_output.py
+pip install -e .
 ```
 
-Or via CLI:
+This installs the `ai-extract` CLI tool and all required dependencies.
+
+---
+
+## 🧠 Usage 
+
+### ➤ Run via Command-Line Interface (CLI)
+
+Once installed, you can run the extractor using:
+
+```bash
+ai-extract <PDF_URL_1> <PDF_URL_2> ...
+```
+
+Example:
+
+```bash
+ai-extract https://example.com/doc1.pdf https://example.com/doc2.pdf
+```
+
+This command will:
+
+* Download each PDF from the URL
+* Convert the PDF to image(s)
+* Run OCR using **Qwen2-VL-2B-OCR**
+* Extract structured data using **LangChain + LLM**
+* Save a `.json` output for each document
+
+---
+
+## 🛠 Environment Variables
+
+Make sure to create a `.env` file in the root directory to provide your LLM credentials:
+
+```env
+OPENAI_API_KEY=your_openai_key
+# or
+GROQ_API_KEY=your_groq_key
+```
+
+
+Then, run the extractor via CLI:
 
 ```bash
 ai-extract
-```
-
-### Example
-
-```python
-from schema_output import extract_document_schema_from_url
-
-url = "http://example.com/path/to/document.pdf"
-employee_id = "12345"
-json_output = extract_document_schema_from_url(url, employee_id)
-print(json_output)
 ```
 
 ---
@@ -200,9 +229,22 @@ print(json_output)
 
 ---
 
+## Notes
+I'm using two approches to get the output schema:
+
+1. Through the Pydantic Schema with langChain framework.
+2. Through schema built-in the prompt and feeding into LLM.
+
+You can select between them and try through the setup file and re-run the same command to install the update the package dependecies.
+```
+pip install -e 
+```
+---
+
+
 ## 👨‍💻 Author
 
 * **Mohammed Khalaf**
   >* Embedded & AI Developer
 
-[GitHub](https://github.com/Mohammedkh97) | [LinkedIn](https://www.linkedin.com/in/mohammed-khalaf97/)--onelien
+[GitHub](https://github.com/Mohammedkh97) | [LinkedIn](https://www.linkedin.com/in/mohammed-khalaf97/)

@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -8,10 +6,12 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jul 11 10:17:49 2025
+# Make data base, printed on Sun Jul 13 20:00:40 2025
 
 # Variables
 
+# environment
+PYDEVD_DISABLE_FILE_VALIDATION = 1
 # environment
 GDK_BACKEND = x11
 # environment
@@ -19,11 +19,15 @@ MEMORY_PRESSURE_WRITE = c29tZSAyMDAwMDAgMjAwMDAwMAA=
 # environment
 LC_ALL = C
 # environment
+NO_AT_BRIDGE = 1
+# environment
 GNOME_SHELL_SESSION_MODE = ubuntu
+# environment
+GJS_DEBUG_OUTPUT = stderr
 # environment
 VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
 # environment
-VSCODE_CWD = /home/developer
+VSCODE_CWD = /home/developer/Dev/Machine-Learning-Projects/Employees_Data_Detection
 # environment
 WINDOWPATH = 2
 # default
@@ -35,6 +39,8 @@ QT_ACCESSIBILITY = 1
 # environment
 PYENV_SHELL = bash
 # environment
+PYTHON_BASIC_REPL = 1
+# environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
@@ -43,7 +49,11 @@ PWD = /home/developer/Dev/Machine-Learning-Projects/Employees_Data_Detection
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
+PS1 = \[]633;A\]\[]633;A\]\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ \[]633;B\]\[]633;B\]
+# environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# environment
+OLDPWD = /home/developer/Dev/Machine-Learning-Projects/Employees_Data_Detection/Ai_data_detector
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
@@ -59,11 +69,9 @@ XAUTHORITY = /run/user/1000/gdm/Xauthority
 # default
 .INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
 # environment
-MEMORY_PRESSURE_WATCH = /sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-gnome\x2dsession\x2dmanager.slice/gnome-session-manager@ubuntu.service/memory.pressure
+MEMORY_PRESSURE_WATCH = /sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure
 # makefile
 MAKEFLAGS = pqrR
-# environment
-DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=03327b6ece603d410131a6ef6870ab62
 # makefile
 CURDIR := /home/developer/Dev/Machine-Learning-Projects/Employees_Data_Detection
 # environment
@@ -83,25 +91,29 @@ XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
+GIT_ASKPASS = /usr/share/code/resources/app/extensions/git/dist/askpass.sh
+# environment
 XDG_SESSION_DESKTOP = ubuntu
 # makefile
 MAKEFILE_LIST := 
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 5290
+VSCODE_PID = 4672
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/nmmc:@/tmp/.ICE-unix/2922,unix/nmmc:/tmp/.ICE-unix/2922
+VSCODE_DEBUGPY_ADAPTER_ENDPOINTS = /home/developer/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-163215662641b8aa.txt
+# environment
+SESSION_MANAGER = local/nmmc:@/tmp/.ICE-unix/2923,unix/nmmc:/tmp/.ICE-unix/2923
 # automatic
 *F = $(notdir $*)
 # environment
 CHROME_DESKTOP = code.desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=03327b6ece603d410131a6ef6870ab62
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
@@ -117,33 +129,47 @@ MAKECMDGOALS := all
 # environment
 XMODIFIERS = @im=ibus
 # environment
-SHLVL = 0
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# environment
+SHLVL = 2
 # environment
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /home/developer/.local/bin:/home/developer/.pyenv/shims:/home/developer/.pyenv/bin:/home/developer/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+PATH = /home/developer/.pyenv/shims:/home/developer/.pyenv/bin:/home/developer/Dev/Machine-Learning-Projects/Employees_Data_Detection/venv/bin:/home/developer/.pyenv/bin:/home/developer/.local/bin:/home/developer/.pyenv/bin:/home/developer/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/developer/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts:/home/developer/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/developer/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts:/home/developer/.config/Code/User/globalStorage/github.copilot-chat/debugCommand
 # default
 MAKEFILES := 
+# environment
+VSCODE_GIT_IPC_HANDLE = /run/user/1000/vscode-git-a28f5a5be4.sock
+# environment
+VSCODE_GIT_ASKPASS_NODE = /usr/share/code/code
 # automatic
 ^F = $(notdir $^)
 # environment
-INVOCATION_ID = 5335175f3f584240943f7486b5f7443f
+VSCODE_GIT_ASKPASS_MAIN = /usr/share/code/resources/app/extensions/git/dist/askpass-main.js
+# environment
+CLUTTER_DISABLE_MIPMAPPED_TEXT = 1
+# environment
+INVOCATION_ID = 38e0c5a5375340be92aecaf45305484b
 # environment
 USERNAME = developer
+# environment
+TERM_PROGRAM = vscode
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # automatic
 ?F = $(notdir $?)
 # environment
 XDG_CURRENT_DESKTOP = Unity
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:
 # automatic
 +F = $(notdir $+)
 # environment
 DESKTOP_SESSION = ubuntu
 # environment
-ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+ORIGINAL_XDG_CURRENT_DESKTOP = Unity
 # environment
 PYENV_ROOT = /home/developer/.pyenv
 # 'override' directive
@@ -155,7 +181,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 2922
+SYSTEMD_EXEC_PID = 2998
 # environment
 DISPLAY = :1
 # environment
@@ -165,25 +191,27 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 2552
-# environment
-DBUS_STARTER_BUS_TYPE = session
+MANAGERPID = 2582
 # environment
 DEBUGINFOD_URLS = https://debuginfod.ubuntu.com 
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 5290
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4672
 # environment
-_ = /usr/share/code/code
+_ = /usr/bin/code
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-JOURNAL_STREAM = 9:38232
+COLORTERM = truecolor
+# environment
+JOURNAL_STREAM = 9:30476
 # environment
 XDG_SESSION_CLASS = user
 # environment
 GSM_SKIP_SSH_AGENT_WORKAROUND = true
+# environment
+BUNDLED_DEBUGPY_PATH = /home/developer/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/libs/debugpy
 # environment
 HOME = /home/developer
 # environment
@@ -192,22 +220,30 @@ QT_IM_MODULE = ibus
 ELECTRON_RUN_AS_NODE = 1
 # environment
 VSCODE_IPC_HOOK = /run/user/1000/vscode-16867801-1.10-main.sock
+# environment
+TERM = xterm-256color
 # default
 .RECIPEPREFIX := 
 # automatic
 <F = $(notdir $<)
 # default
 SUFFIXES := 
+# environment
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
+TERM_PROGRAM_VERSION = 1.101.2
+# environment
 VSCODE_ESM_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 GDMSESSION = ubuntu
 # variable set hash-table stats:
-# Load=97/1024=9%, Rehash=0, Collisions=4/124=3%
+# Load=116/1024=11%, Rehash=0, Collisions=4/143=3%
 
 # Pattern-specific Variable Values
 
@@ -215,9 +251,9 @@ GDMSESSION = ubuntu
 
 # Directories
 
-# . (device 66306, inode 56633168): 25 files, no impossibilities.
+# . (device 66306, inode 56633168): 22 files, no impossibilities.
 
-# 25 files, no impossibilities in 1 directories.
+# 22 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -237,6 +273,9 @@ Makefile:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+ 
+make: *** No rule to make target 'all'.  Stop.
 
 # Not a target:
 all:
@@ -267,12 +306,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 33 / storage = 540 B / avg = 16 B
-# current buf: size = 8162 B / used = 540 B / count = 33 / avg = 16 B
+# strcache buffers: 1 (0) / strings = 30 / storage = 510 B / avg = 17 B
+# current buf: size = 8162 B / used = 510 B / count = 30 / avg = 17 B
 
-# strcache performance: lookups = 36 / hit rate = 8%
+# strcache performance: lookups = 33 / hit rate = 9%
 # hash-table stats:
-# Load=33/8192=0%, Rehash=0, Collisions=0/36=0%
-# Finished Make data base on Fri Jul 11 10:17:49 2025
+# Load=30/8192=0%, Rehash=0, Collisions=0/33=0%
+# Finished Make data base on Sun Jul 13 20:00:40 2025
 
  

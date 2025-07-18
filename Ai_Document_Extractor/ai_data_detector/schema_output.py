@@ -1,7 +1,8 @@
 import requests
 import json
-from .load_model import inference
-from .config import get_api_key
+from load_model import inference
+from config import get_api_key
+
 
 def build_prompt(ocr_text):
     return f"""
@@ -100,8 +101,26 @@ if healthcare professional registeration certification, extract the following fi
     }}
 ]
 }}
+if tenancty contract information registeration certificate, extract the following fields:
+
+{{
+"document_type": "tenancty contract information registeration certificate",
+"contract_information_registeration_certificate": [
+{{
+        "tenant_name": "",
+        "property_no": ""
+        "start_date":
+        "end_date":
+        "license_no":
+        "registeration_date":
+        "expiry_date":
+        
+    }}
+]
+}}
     
 """
+
 
 def extract_document_schema_from_url(url, employee_id):
     ocr_text = inference(url, employee_id)

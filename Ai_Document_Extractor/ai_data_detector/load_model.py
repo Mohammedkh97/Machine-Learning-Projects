@@ -2,7 +2,7 @@
 from transformers import AutoProcessor, AutoModelForImageTextToText
 import torch
 import time
-from read_pdf import download_and_convert_pdf_to_image
+from .read_pdf import download_and_convert_pdf_to_image
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -40,6 +40,7 @@ conversation = [
         ],
     }
 ]
+
 
 def inference(url, employee_id):
     print("[INFO] Starting inference...\n")
@@ -108,7 +109,6 @@ def inference(url, employee_id):
     print("|========================================|")
     print(f"|         Inference time: {elapsed:.2f} sec       |")
     print("|========================================|")
-
 
     return output_text[0]
 

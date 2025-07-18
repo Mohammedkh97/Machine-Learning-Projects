@@ -55,9 +55,11 @@ class VisaData(BaseModel):
 
 class ResidenceData(BaseModel):
     id_number: Optional[str] = Field(
-        None, description="ID number, may contain Arabic characters"
+        None, description="ID number, only contains numbers"
     )
-    passport_number: Optional[str] = Field(None, description="Passport number")
+    passport_number: Optional[str] = Field(
+        None, description="Passport number maybe has a number"
+    )
     name: Optional[str] = Field(None, description="Full name")
     profession: Optional[str] = Field(None, description="Profession")
     issue_date: Optional[str] = Field(None, description="Issue date")

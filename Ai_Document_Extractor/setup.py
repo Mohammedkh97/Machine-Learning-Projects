@@ -25,7 +25,7 @@ setup(
         "pandas",
     ],
     entry_points={
-        "console_scripts": ["ai-extract=ai_data_detector.schema_output:main"],
+        "console_scripts": ["ai-extract=ai_data_detector.schema_extractor:main"],
     },
     python_requires=">=3.8",
 )

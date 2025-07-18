@@ -1,11 +1,11 @@
 # file: schema_extractor.py
-from config import get_api_key
+from .config import get_api_key
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
-from schemas import DocumentSchema
+from .schemas import DocumentSchema
 
 # from config import llm
-from load_model import inference
+from .load_model import inference
 import json
 
 schema_template = """
@@ -55,18 +55,18 @@ def extract_clean_output(q):
     data = json.loads(q.model_dump_json())
     doc_type = data.get("document_type")
 
-    # Mapping document_type to its corresponding field name in the schema
+    # Updated mapping to match correct camelCase Pydantic field names
     doc_type_field_map = {
-        "EMPLOYMENT CONTRACT FULL WORK": "contract_details",
-        "eVisa - Tourism": "visa_details",
-        "eVisa - Employment": "visa_details",
-        "Residence": "residence_details",
-        "Change Status": "changeStatus_details",
-        "Passport": "passport_details",
-        "Healthcare Professional Registration Certificate": "healthcare_details",
+        "EMPLOYMENT CONTRACT FULL WORK": "contractDetails",
+        "eVisa - Tourism": "visaDetails",
+        "eVisa - Employment": "visaDetails",
+        "Residence": "residenceDetails",
+        "Change Status": "changeStatusDetails",
+        "Passport": "passportDetails",
+        "Healthcare Professional Registration Certificate": "healthcareDetails",
     }
 
-    # Lookup the relevant section based on doc_type
+    # Lookup the relevant key based on document_type
     relevant_key = doc_type_field_map.get(doc_type)
 
     if not relevant_key:
@@ -82,12 +82,18 @@ def extract_clean_output(q):
 
     if not relevant_data:
         return json.dumps(
-            {"document_type": doc_type, "message": f"No data found for {relevant_key}"},
+            {
+                "document_type": doc_type,
+                "message": f"No data found for {relevant_key}",
+            },
             indent=4,
         )
 
-    # Return the filtered output
-    result = {"document_type": doc_type, relevant_key: relevant_data}
+    # Return only the relevant portion of the structured output
+    result = {
+        "document_type": doc_type,
+        relevant_key: relevant_data,
+    }
 
     return json.dumps(result, indent=4)
 
@@ -98,8 +104,8 @@ def main():
 
     text = inference(url, employee_id)
     q = extract_document_schema(str(text))
-    print(q)
-    # Optionally: print(extract_clean_output(q))
+    print("=================================================")
+    print(extract_clean_output(q))
 
 
 if __name__ == "__main__":
